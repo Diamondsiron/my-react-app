@@ -10,7 +10,9 @@ class Home extends React.Component {
             collapsed: false,
         };
     }
-    
+    componentDidMount() {
+        console.log(this.props.history.location.state,'this.props.history.location.state')
+    }
     
     toggleCollapsed = () => {
         this.setState({
