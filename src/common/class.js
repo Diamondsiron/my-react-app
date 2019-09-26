@@ -1,5 +1,6 @@
 import React from 'react'
 import Children from './children'
+import Child from './child'
 
 class Classes extends React.Component {
     constructor(props){
@@ -30,6 +31,7 @@ class Classes extends React.Component {
                 <p>{this.props.name},{this.state.name}</p>
                 <p>{this.props.age},{this.state.age}</p>
                 <Children changeAge={this.changeAge} age={this.props.age}/>
+                <Child sex={this.props.sex}/>
             </div>
         )
     }
