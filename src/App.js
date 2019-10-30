@@ -4,6 +4,7 @@ import Login from './components/login'
 import Home from './components/home'
 import Checkboxs from './components/check'
 import Props from './components/props'
+import Modularization from './components/modularization'
 import { Provider } from 'react-redux'
 import store from './store/index'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
@@ -18,7 +19,7 @@ function App() {
           <Route path="/Home" component={Home}/>
           <Route path="/Checkboxs" component={Checkboxs}/> 
           <Route path="/Props" component={Props}/> 
-          <Route path="/" component={Home}/>
+          <Route path="/" component={Modularization}/>
         </Switch>
       </Router>
       </Provider>

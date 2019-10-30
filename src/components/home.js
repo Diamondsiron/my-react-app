@@ -1,5 +1,6 @@
 import { Table, Divider, Tag, Menu, Icon, Layout  } from 'antd';
 import React from 'react';
+import WrappedHorizontalLoginForm from "./form";
 const { SubMenu } = Menu;
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -132,6 +133,8 @@ class Home extends React.Component {
                 </Content>
                 </Layout>
                 <Footer>Footer</Footer>
+                <div></div>
+                <WrappedHorizontalLoginForm/>
             </Layout>
             
           </div> 
