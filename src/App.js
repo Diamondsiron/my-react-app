@@ -7,21 +7,27 @@ import Props from './components/props'
 import Modularization from './components/modularization'
 import { Provider } from 'react-redux'
 import store from './store/index'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route,Link} from './plugins/my-react-router-dom'
+//import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 function App() {
   
   return (
     <div className="App">
     <Provider store={store}>
-      <Router>
+     {/*  <Router>
         <Switch>
           <Route path="/Login" component={Login}/>
           <Route path="/Home" component={Home}/>
           <Route path="/Checkboxs" component={Checkboxs}/> 
           <Route path="/Props" component={Props}/> 
-          <Route path="/" component={Modularization}/>
+          <Route path="/" exact component={Modularization}/>
         </Switch>
-      </Router>
+      </Router> */}
+      <BrowserRouter>
+        <Route path="/Login" component={Login}></Route>
+        <Route path="/" exact component={Props}/>
+        <Link to="/Login">login</Link>
+      </BrowserRouter>
       </Provider>
   </div>
   );
