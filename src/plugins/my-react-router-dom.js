@@ -50,6 +50,7 @@ class BrowserRouter extends React.Component{
     }
 
     componentWillUnmount() {
+        
         if (this.unlisten) this.unlisten()
     }
 
