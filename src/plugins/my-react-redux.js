@@ -1,20 +1,22 @@
 import React, { useContext, useState, useEffect} from 'react'
-import { get } from 'http'
 
-const Context = React.Context()
+
+const Context = React.createContext()
 
 export function Provider ({store, children}) {
-    return (<Context.Provider value={store}>
+    return <Context.Provider value={store}>
                 {children}
-            </Context.Provider>)
+            </Context.Provider>
     
 }
 
 export const connect = (
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps = state => state,
+    mapDispatchToProps = {}
 ) => Cmp => props => {
+    
     const store = useContext(Context)
+    
     const getMoreProps = () => {
         const stateProps = mapStateToProps(store.getState())
         const dispatch = bindActionCreators(
@@ -23,12 +25,13 @@ export const connect = (
         )
         return {...stateProps,...dispatch}
     }
-    const [moreProps, setMoreProps] = useState(getMoreProps)
+    
     useEffect(()=> {
         store.subscribe(()=>{
-            setMoreProps({...moreProps, ...getMoreProps})
+            setMoreProps({...moreProps, ...getMoreProps()})
         })
     },[])
+    const [moreProps, setMoreProps] = useState(getMoreProps())
     return <Cmp {...props} {...moreProps}/>
 }
 
