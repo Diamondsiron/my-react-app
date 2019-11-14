@@ -12,7 +12,7 @@ function thunk({ getState }) {
     
     return dispatch => action => {
         if (typeof action === "function") {
-            console.log(action,'thunk')
+            console.log(action,'异步thunk')
             return action(dispatch, getState);
         } else {
             console.log(action,'thunk')

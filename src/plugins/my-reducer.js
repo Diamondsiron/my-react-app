@@ -5,11 +5,7 @@ const rootReducer = (state = 0, action) => {
             return state+1
         }
         case 'asyncadd':{
-            console.log(state)
-            return setTimeout(()=>{ 
-                    console.log(state) 
-                    return state+2},
-                    1000)
+            return state+2
         }
         default:
             return state

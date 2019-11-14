@@ -28,8 +28,8 @@ function App() {
         </Switch>
       </Router> */}
       <BrowserRouter>
-        <Route path="/ReactRedux" component={React}></Route>
-        <Route path="/" exact component={ReactRedux}/>
+        <Route path="/ReactRedux" component={ReactRedux}></Route>
+        <Route path="/" exact component={Redux}/>
         <Link to="/ReactRedux">ReactRedux</Link>
       </BrowserRouter>
       </Provider>

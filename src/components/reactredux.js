@@ -27,10 +27,10 @@ const mapDispatchToProps = {
     add:()=>{
         return {type:'add'}
     },
-    asyncadd:()=>{
-         
-        return {type:'asyncadd'}
-       
+    asyncadd:() => dispatch => {
+        setTimeout(() => {
+          dispatch({ type: "add" });
+        }, 1000);
     }
 }
 
